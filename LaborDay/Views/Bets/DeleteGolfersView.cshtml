@@ -1,0 +1,51 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Golfer>
+<link rel="stylesheet" href="~/css/mainview.css" />
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+</head>
+<h2>Labor Day</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				Golfer ID
+			</th>
+			<th>
+				Golfer Name
+			</th>
+			<th>
+				Playing
+			</th>
+			<th>
+				Action
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.ID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.GolferName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Playing)
+				</td>
+				<td>
+					<a asp-action="DeleteGolfer" asp-route-id="@item.ID"> Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

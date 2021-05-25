@@ -1,0 +1,47 @@
+﻿
+.grid-container {
+    display: grid;
+    grid-template-columns: minmax(50px,75px) minmax(30px,60px) minmax(30px,60px) minmax(30px,60px) minmax(40px,50px) 
+    minmax(50px,75px) minmax(30px,60px) minmax(30px,60px) minmax(30px,60px) minmax(40px,50px) 
+    minmax(50px,75px) minmax(30px,60px) minmax(30px,60px) minmax(30px,60px) minmax(40px,50px);
+    grid-template-rows: minmax(20px,30px) repeat(auto-fill,50px);
+}
+.score {
+    text-align: center;
+    font: bold;
+}
+.columnHeaderG {
+    font:bold; 
+}
+.columnHeaderS {
+    text-align: center;
+    font: bold 14px arial;
+}
+.scoreS {
+    text-align: center;
+    font: bold;
+    margin-right: 10px;
+}
+.columnHeaderSh {
+    margin-right: 10px;
+    font: bold 14px arial;
+    text-align:center;
+}
+body {
+    justify-content:center;
+    background-color: aliceblue;
+    margin: 0 auto;
+}
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+.placebet {
+    display: inline-grid;
+    grid-template-columns: minmax(30px,60px) minmax(30px,60px) minmax(30px,60px) minmax(30px,60px);
+}
+
+.phone {
+    text-align: center;
+    font: bold 18px arial;
+}

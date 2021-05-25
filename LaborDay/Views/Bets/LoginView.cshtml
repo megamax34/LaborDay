@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "LoginView";
+}
+<h2>Login</h2>
+    <form asp-action="PayOutPost" >
+		<div style="display: grid; width:120px;" class="form-group">
+			<div style="grid-column:1;">
+				<label>Username</label><br />
+				<input class="form-group-sm" size="15" width="15" id="username" name="username" type="text" />
+			</div>
+			<div style="grid-column:2; ">
+				<label>Password</label><br />
+				<input class="form-group-sm" size="15" width="15" id="password" name="password" type="password" />
+			</div>
+			<div style="grid-column:3; ">
+				<br />
+				<input type="submit" value="Login" class="btn btn-default" asp-action="LoginVerify" />
+			</div>
+		</div>
+    </form>
+
+

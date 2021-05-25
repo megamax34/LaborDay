@@ -1,0 +1,114 @@
+﻿@model LaborDay.Models.MainView
+
+<body>
+    <table style="margin-top:10px; margin-bottom:10px;">
+        <tr>
+            <td style="font:bold">
+                People that bet on the @ViewBag.Winner to Win:
+            </td>
+        </tr>
+        @foreach (var w in Model.WinWinnersList)
+        {
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    @Model.ListOfBettors.Where(b => b.ID == w.ID).First().Name (@w.ID)&nbsp;&nbsp;
+                </td>
+                <td>
+                    &nbsp;&nbsp;@w.Wins
+                </td>
+            </tr>
+        }
+    </table>
+    <table style="margin-top:10px; margin-bottom:10px;">
+        <tr>
+            <td style="font:bold">
+                People that bet on the @ViewBag.Winner to Place:
+            </td>
+        </tr>
+        @foreach (var w in Model.WinPlacersList)
+        {
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    @Model.ListOfBettors.Where(b => b.ID == w.ID).First().Name (@w.ID)&nbsp;&nbsp;
+                </td>
+                <td>
+                    &nbsp;&nbsp;@w.Places
+                </td>
+            </tr>
+        }
+    </table>
+    <table style="margin-top:10px; margin-bottom:10px;">
+        <tr>
+            <td style="font:bold">
+                People that bet on the @ViewBag.Winner to Show:
+</tr>
+        @foreach (var w in Model.WinShowersList)
+        {
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    @Model.ListOfBettors.Where(b => b.ID == w.ID).First().Name (@w.ID)&nbsp;&nbsp;
+                </td>
+                <td>
+                    &nbsp;&nbsp;@w.Shows
+                </td>
+            </tr>
+        }
+    </table>
+    <table style="margin-top:10px; margin-bottom:10px;">
+        <tr>
+            <td style="font:bold">
+                People that bet on the @ViewBag.Placer to Place:
+</tr>
+        @foreach (var w in Model.PlacePlacersList)
+        {
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    @Model.ListOfBettors.Where(b => b.ID == w.ID).First().Name (@w.ID)&nbsp;&nbsp;
+                </td>
+                <td>
+                    &nbsp;&nbsp;@w.Places
+                </td>
+            </tr>
+        }
+    </table>
+    <table style="margin-top:10px; margin-bottom:10px;">
+        <tr>
+            <td style="font:bold">
+                People that bet on the @ViewBag.Placer to Show:
+</tr>
+        @foreach (var w in Model.PlaceShowersList)
+        {
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    @Model.ListOfBettors.Where(b => b.ID == w.ID).First().Name (@w.ID)&nbsp;&nbsp;
+                </td>
+                <td>
+                    &nbsp;&nbsp;@w.Shows
+                </td>
+            </tr>
+        }
+    </table>
+    <table style="margin-top:10px; margin-bottom:10px;">
+        <tr>
+            <td style="font:bold">
+                People that bet on the @ViewBag.Shower to Show:
+</tr>
+        @foreach (var w in Model.ShowShowersList)
+        {
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    @Model.ListOfBettors.Where(b => b.ID == w.ID).First().Name (@w.ID)&nbsp;&nbsp;
+                </td>
+                <td>
+                    &nbsp;&nbsp;@w.Shows
+                </td>
+            </tr>
+        }
+    </table>
+  </body>

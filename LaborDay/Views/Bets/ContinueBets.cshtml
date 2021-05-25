@@ -1,0 +1,76 @@
+﻿@model LaborDay.Models.MainView
+@{
+    ViewData["Title"] = "LaborDay";
+}
+<link rel="stylesheet" href="~/css/mainview.css" />
+
+<h2>Labor Day</h2>
+
+
+<body>
+    <form asp-controller="Bets" asp-action="ContinueBetsPost" method="get">
+        <div class="grid-container">
+            <div class="columnHeader">Golfer</div>
+            <div class="columnHeaderS">Win</div>
+            <div class="columnHeaderS">Place</div>
+            <div class="columnHeaderSh">Show</div>
+            <div>&nbsp;</div>
+            <div class="columnHeader">Golfer</div>
+            <div class="columnHeaderS">Win</div>
+            <div class="columnHeaderS">Place</div>
+            <div class="columnHeaderSh">Show</div>
+            <div>&nbsp;</div>
+            <div class="columnHeader">Golfer</div>
+            <div class="columnHeaderS">Win</div>
+            <div class="columnHeaderS">Place</div>
+            <div class="columnHeaderSh">Show</div>
+            <div>&nbsp;</div>
+            @foreach (var g in Model.golferList)
+            {
+                <div class="form-group">
+                    <input type="submit" value="@g.GolferName" name="golfername" asp-action="ContinueBetsPost" />
+                    <input type="hidden" value="@ViewData["bettor_id"]" name="bettorid" />
+                </div>
+                <div class="score">
+                    @if (Model.WinList.Where(w => w.ID == g.ID).Count() == 0)
+                    {<label>0</label>}
+                    else
+                    { @Model.WinList.Where(w => w.ID == g.ID).First().Wins}
+                </div>
+                <div class="score">
+                    @if (Model.PlaceList.Where(w => w.ID == g.ID).Count() == 0)
+                    {<label>0</label>}
+                    else
+                    { <label>@Model.PlaceList.Where(w => w.ID == g.ID).First().Places </label>}
+                </div>
+                <div class="scoreS">
+                    @if (Model.ShowList.Where(w => w.ID == g.ID).Count() == 0)
+                    {<label>0</label>}
+                    else
+                    { <label>@Model.ShowList.Where(w => w.ID == g.ID).First().Shows </label>}
+                </div>
+                <div>&nbsp;</div>
+            }
+        </div>
+        
+    </form>
+        </body>
+<footer>
+    <p>Money Owed = $@Model.Money</p>
+    <p> Bets Pending</p>
+
+    <table>
+        @foreach (var b in Model.TempBets)
+        {
+            <tr>
+                <td>@Model.golferList.SingleOrDefault(g => g.ID == b.GolferId).GolferName</td>
+                <td>@Html.DisplayFor(modelItem => b.Win)</td>
+                <td>@Html.DisplayFor(modelItem => b.Place)</td>
+                <td>@Html.DisplayFor(modelItem => b.Show)</td>
+                <td><a asp-action="DeleteTemp" asp-route-id="@b.ID" asp-route-bettorid="@ViewData["bettor_id"]">Delete</a> </td>
+            </tr>
+        }
+
+    </table>
+    <a asp-action="CheckOut">Check Out</a>
+</footer>

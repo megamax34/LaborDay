@@ -1,0 +1,84 @@
+﻿@model LaborDay.Models.MainView
+@{
+	ViewData["Title"] = "LaborDay";
+	int totalMoney = 0;
+}
+
+<link rel="stylesheet" href="~/css/mainview.css" />
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+</head>
+<h2>Labor Day</h2>
+<body>
+
+	<form asp-controller="Bets" asp-action="StartBet" method="get">
+		<div class="grid-container">
+			<div class="columnHeaderG">Golfer</div>
+			<div class="columnHeaderS">Win</div>
+			<div class="columnHeaderS">Place</div>
+			<div class="columnHeaderSh">Show</div>
+			<div>&nbsp;</div>
+			<div class="columnHeaderG">Golfer</div>
+			<div class="columnHeaderS">Win</div>
+			<div class="columnHeaderS">Place</div>
+			<div class="columnHeaderSh">Show</div>
+			<div>&nbsp;</div>
+			<div class="columnHeaderG">Golfer</div>
+			<div class="columnHeaderS">Win</div>
+			<div class="columnHeaderS">Place</div>
+			<div class="columnHeaderSh">Show</div>
+			<div>&nbsp;</div>
+			@foreach (var g in Model.golferList)
+			{
+				<div class="form-group">
+					<input type="submit" value="@g.GolferName" name="golfername" asp-action="StartBet" />
+				</div>
+				<div class="score">
+					@if (Model.WinList.Where(w => w.ID == g.ID).Count() == 0)
+					{<label>0</label>}
+					else
+					{<label> @Model.WinList.Where(w => w.ID == g.ID).First().Wins</label>totalMoney++;
+				}
+				</div>
+				<div class="score">
+					@if (Model.PlaceList.Where(w => w.ID == g.ID).Count() == 0)
+					{<label>0</label>}
+					else
+					{ <label>@Model.PlaceList.Where(w => w.ID == g.ID).First().Places </label>totalMoney++;
+				}
+				</div>
+				<div class="scoreS">
+					@if (Model.ShowList.Where(w => w.ID == g.ID).Count() == 0)
+					{<label>0</label>}
+					else
+					{ <label>@Model.ShowList.Where(w => w.ID == g.ID).First().Shows </label>totalMoney++;
+				}
+				</div>
+				<div>&nbsp;</div>
+
+			}
+		</div>
+		<p>
+
+
+		</p>
+		<div class="form-group">
+			<select asp-for="bettorSelect" asp-items="Model.bettorList" required>
+				<option value=""></option>
+			</select>
+		</div>
+
+
+	</form>
+	<hr style="margin: 5em;" />
+	<p style="font-size:medium"> Add a bettor</p>
+	<form asp-action="AddBettor" style="margin-bottom:2em;">
+		Bettor name: <input type="text" name="bettorName" size="10" style="font-size:smaller"><br>
+		<input type="submit" value="Add" style="font-size:smaller">
+	</form>
+
+	<a asp-action="AddGolferView" >Add Golfer</a>
+</body>

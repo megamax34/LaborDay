@@ -1,0 +1,11 @@
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\bin\Release\netcoreapp2.0\LaborDay.deps.json
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\bin\Release\netcoreapp2.0\LaborDay.runtimeconfig.json
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\bin\Release\netcoreapp2.0\LaborDay.runtimeconfig.dev.json
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\bin\Release\netcoreapp2.0\LaborDay.dll
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\bin\Release\netcoreapp2.0\LaborDay.pdb
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\obj\Release\netcoreapp2.0\LaborDay.csprojResolveAssemblyReference.cache
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\obj\Release\netcoreapp2.0\LaborDay.csproj.CoreCompileInputs.cache
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\obj\Release\netcoreapp2.0\LaborDay.AssemblyInfoInputs.cache
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\obj\Release\netcoreapp2.0\LaborDay.AssemblyInfo.cs
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\obj\Release\netcoreapp2.0\LaborDay.dll
+C:\Users\maxpa\source\repos\LaborDay\LaborDay\obj\Release\netcoreapp2.0\LaborDay.pdb

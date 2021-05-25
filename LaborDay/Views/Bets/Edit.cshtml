@@ -1,0 +1,57 @@
+﻿@model LaborDay.Models.Bet
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Bet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="GolferId" class="control-label"></label>
+                <select asp-for="GolferId" class="form-control" asp-items="ViewBag.GolferId"></select>
+                <span asp-validation-for="GolferId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BettorID" class="control-label"></label>
+                <select asp-for="BettorID" class="form-control" asp-items="ViewBag.BettorID"></select>
+                <span asp-validation-for="BettorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Win" /> @Html.DisplayNameFor(model => model.Win)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Place" /> @Html.DisplayNameFor(model => model.Place)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Show" /> @Html.DisplayNameFor(model => model.Show)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

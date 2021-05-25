@@ -1,0 +1,66 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	int s_index = 0;
+}
+
+@model LaborDay.Models.ScoreBoardView
+<style>
+	table {
+		border-collapse: collapse;
+	}
+
+	th, td {
+		text-align: center;
+		border-bottom: 1px solid #ddd;
+		padding: 5px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #f2f2e2;
+	}
+
+	tr:nth-child(odd) {
+		background-color: aliceblue;
+	}
+</style>
+<table>
+	<tr style="background-color:#ddd">
+		<th width="50">Total</th>
+		<th>Golfer</th>
+		@for (int i = 1; i <= 18; i++)
+		{
+			<th style="border-left: 1px solid #171616; border-right: 1px solid #171616;" width="30">@i</th>}
+
+	</tr>
+	
+	@foreach (var g in Model.GolferList)
+	{
+		s_index= 0;
+		<tr>
+			<td width="30"><label>@g.Total</label></td>
+			<td><label>@g.GolferName</label></td>
+
+			@for (int h = 1; h <= 18; h++)
+			{
+
+				if (g.HoleList.Contains(h))
+				{
+					<td style="border-left: 1px solid #171616; border-right: 1px solid #171616;" width="30">
+						<label>@g.ScoreList[s_index]</label>
+					</td>
+					s_index++;
+
+				}
+				else
+				{
+					<td style="border-left: 1px solid #171616; border-right: 1px solid #171616;" width="30">
+						<label> </label>
+					</td>
+
+				}
+			}
+		</tr>
+	}
+</table>

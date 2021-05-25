@@ -1,0 +1,25 @@
+﻿@model LaborDay.Models.Pay
+
+
+<body>
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="PayOutPost">
+        <div class="form-group">
+            Winner
+            <select asp-items="Model.Golfers" asp-for="GolferWin" required>
+                <option value=""></option>
+            </select>
+            Placer
+            <select asp-items="Model.Golfers" asp-for="GolferPlace" required>
+                <option value=""></option>
+            </select>
+            Shower
+            <select asp-items="Model.Golfers" asp-for="GolferShow" required>
+                <option value=""></option>
+            </select>
+            <input type="submit" value="Calculate" class="btn btn-default" />
+        </div>
+    </form>
+</body>

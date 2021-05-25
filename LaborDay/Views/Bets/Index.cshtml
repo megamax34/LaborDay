@@ -1,0 +1,79 @@
+﻿@model IEnumerable<LaborDay.Models.Bet>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+	<a asp-action="DeleteBettorsView">DELETE A BETTOR</a>
+</p>
+<hr style="margin: 1em;" />
+<p>
+	<a asp-action="DeleteGolfersView">DELETE A GOLFER</a>
+</p>
+<hr style="margin: 1em;" />
+<p>
+	<a asp-action="DeleteAll">DELETE ALL BETS IMMEDIATELY</a>
+</p>
+<hr style="margin: 1em;" />
+<p>
+	<a asp-action="DeleteAllScoreCards">DELETE ALL SCORE IMMEDIATELY</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Bettor)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Golfer)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Win)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Place)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Show)
+			</th>
+
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Bettor.Name)
+					:
+					@Html.DisplayFor(modelItem => item.Bettor.ID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Golfer.GolferName)
+					:
+					@Html.DisplayFor(modelItem => item.Golfer.ID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Win)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Place)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Show)
+				</td>
+
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

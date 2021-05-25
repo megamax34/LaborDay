@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnwZklEVWXUGWbBb3Oh79BAAAAAACAAAAAAAQZgAAAAEAACAAAADQany6qtYdV/I5SJNzl++4kBFN9MZLOQOMnnlW67GuCAAAAAAOgAAAAAIAACAAAABTwBvR1OGkZ4s1lXjF42qohAyrabQZvxxadljWG++sVoAAAAByDOEpmV2kRzLxklFchwFlAh7LKIdPAeaJXXXATtnwsf6vjib80A3naNkplkw0HT84PpS39MGKz8PR0Yz+rzZxRUTXCfYM4UncD/tls0oYn51IHvy95YyhlaLoPIqXkr6g5j6xj1IhKzdvXTlXtyoGGgj1RWIvwIABhibOZAyA60AAAACN1K/vJFjWVfp+ZFCSVVxiFUOyiwiKrW7Uc9XQ21aQy6jF3yv0JxlpujrGfTzJ5X2Tqy90QBxxFmSQIB1jT0ER</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=laborday-server-v1.database.windows.net;Initial Catalog=LaborDay-v1;Integrated Security=False;User ID=mpawlikowski;Password=hFn4bv%r;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
